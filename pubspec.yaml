@@ -1,0 +1,112 @@
+name: neng
+description: A new Flutter application.
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# Read more about versioning at semver.org.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_swiper: ^1.1.4          # banner
+  shared_preferences: ^0.5.0      # key value 存储
+  dio: ^1.0.9                     # http
+  flutter_spinkit: ^3.1.0         # load(暂未用到)
+  image_picker: ^0.5.0+3          # 图片选择 上传用户图片
+  audioplayers: ^0.10.0           # 音频文件播放
+  flutter_html: ^0.9.4            # 内嵌html
+  cached_network_image: ^0.7.0    # 图片缓存框架
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+# For information on the generic Dart part of this file, see the
+# following page: https://www.dartlang.org/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/province.json
+    - assets/images/launcher.png
+    - assets/images/Mx/launcher.png
+    - assets/images/Nx/launcher.png
+    - assets/tab/icon_tab_care_h_22x22.png
+    - assets/tab/icon_tab_care_l_22x22.png
+    - assets/tab/icon_tab_me_h_22x22.png
+    - assets/tab/icon_tab_me_l_22x22.png
+    - assets/tab/icon_tab_message_h_22x22.png
+    - assets/tab/icon_tab_message_l_22x22.png
+    - assets/tab/icon_tab_release_new_36x26.png
+    - assets/tab/icon_tab_square_h_22x22.png
+    - assets/tab/icon_tab_square_l_22x22.png
+    - assets/record/icon_feed_comment_16x15.png
+    - assets/record/icon_feed_dislike_h_16x15.png
+    - assets/record/icon_feed_dislike_l_16x15.png
+    - assets/record/icon_feed_like_h_16x15.png
+    - assets/record/icon_feed_like_l_16x15.png
+    - assets/record/icon_square_init_content_345x80.png
+    - assets/record/icon_square_init_top_142x32.png
+    - assets/add/icon_publish_attch_remove_12x12.png
+    - assets/add/upload.png
+    - assets/add/close.png
+    - assets/message/icon_message_comment_20x20.png
+    - assets/message/icon_message_praise_20x20.png
+    - assets/message/icon_message_system_20x20.png
+    - assets/message/start.png
+    - assets/message/stop.png
+    - assets/info/icon_ucenter_setting_15x15.png
+    - assets/info/icon_login_phone_15x26.png
+    - assets/info/icon_voice_card_holder_line_30x3.png
+    - assets/info/icon_voice_detail_more_16x16.png
+    - assets/icons/man.png
+    - assets/icons/sex.png
+    - assets/icons/woman.png
+    - assets/icons/icon_msg_arrow_5x11.png
+    - assets/icons/camera.png
+    - assets/icons/pen.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.io/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.io/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.io/custom-fonts/#from-packages
