@@ -103,17 +103,20 @@ class PhotoPickerState extends State<PhotoPicker> with SingleTickerProviderState
     } else if (widget.photoPickerType == PhotoPickerType.url) {
       imageView = CachedNetworkImage(imageUrl: widget.imageUrl, fit: BoxFit.fitWidth);
     }
-    return GestureDetector(
-      onScaleStart: _handleOnScaleStart,
-      onScaleUpdate: _handleOnScaleUpdate,
-      onScaleEnd: _handleOnScaleEnd,
-      onTap: _back,
-      child: ClipRect(
-        child: Transform(
-          transform: Matrix4.identity()
-            ..translate(_offset.dx, _offset.dy)
-            ..scale(_scale),
-          child: imageView,
+    return Container(
+      color: Colors.black,
+      child: GestureDetector(
+        onScaleStart: _handleOnScaleStart,
+        onScaleUpdate: _handleOnScaleUpdate,
+        onScaleEnd: _handleOnScaleEnd,
+        onTap: _back,
+        child: ClipRect(
+          child: Transform(
+            transform: Matrix4.identity()
+              ..translate(_offset.dx, _offset.dy)
+              ..scale(_scale),
+            child: imageView,
+          ),
         ),
       ),
     );

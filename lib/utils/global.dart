@@ -15,6 +15,7 @@ class GlobalConfig {
 
   static String imageUrlBase = 'http://nengneng-daily.oss-cn-hangzhou.aliyuncs.com/';
   static String host = 'http://192.168.31.254:9191';
+//  static String host = 'http://192.168.1.105:9191';
 //  static String host = 'http://47.102.101.22:9191';
   static String projectName = '/neng-app';
   static String baseUrl = host + projectName;
@@ -43,6 +44,8 @@ class GlobalApi{
   static String topicListWithGroup = GlobalConfig.baseUrl + '/v1/topic/listWithGroup';
   // 获取话题条目
   static String topicListTopicItem = GlobalConfig.baseUrl + '/v1/topic/listTopicItem';
+  // 获取话题条目 根据点赞数量倒序查询
+  static String topicListTopicItemOrderByPraiseDesc = GlobalConfig.baseUrl + '/v1/topic/listTopicItemOrderByPraiseDesc';
   // 调教话题item
   static String topicSubmit = GlobalConfig.baseUrl + '/v1/topic/submit';
   // 获取话题条目评论
@@ -51,6 +54,8 @@ class GlobalApi{
   static String topicItemCommentSubmit = GlobalConfig.baseUrl + '/v1/topic/submitComment';
   // 随机获取话题条目
   static String randomTopicItem = GlobalConfig.baseUrl + '/v1/topic/randomTopicItem';
+  // 获取我关注的用户 发表的话题item
+  static String getMyFollowUserTopicItem = GlobalConfig.baseUrl + '/v1/topic/getMyFollowUserTopicItem';
   // 随机获取话题
   static String randomTopic = GlobalConfig.baseUrl + '/v1/topic/randomTopic';
   // 搜索话题

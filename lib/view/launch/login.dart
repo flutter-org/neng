@@ -85,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
           Expanded(
             child: Container(
               child: FlatButton(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
                 color: Colors.black,
                 child: Text(
                   sendCodeBtnText,
@@ -104,17 +105,22 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget initLoginBtn() {
     return Container(
-      padding: EdgeInsets.only(top: 50.0),
+      padding: EdgeInsets.only(top: 80.0),
       child: FlatButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
         color: Colors.black,
         child: Row(
           children: <Widget>[
             Expanded(
-              child: Text(
-                '进入新的世界',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.white,
+              child: Container(
+                alignment: Alignment.center,
+                height: 50.0,
+                child: Text(
+                  '进入新的世界',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )
@@ -158,14 +164,16 @@ class _LoginPageState extends State<LoginPage> {
   void _goMain() async {
     Load.openLoading(_context);
     bool loginRes = await _userService.login(phoneInputController.text, codeInputController.text);
-    Load.closeLoading();
     if (!loginRes) {
+      Load.closeLoading();
       return;
     }
     bool refreshUserRes = await _userService.refreshUserModel();
     if (!refreshUserRes) {
+      Load.closeLoading();
       return;
     }
+    Load.closeLoading();
     if (_timer.isActive) {
       _timer.cancel();
     }

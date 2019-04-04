@@ -139,12 +139,47 @@ class TopicService extends BaseService {
     return obj;
   }
 
+  Future<TopicItemListModel> topicItemListOrderByPraiseDesc(int topicId, int page, int size) async {
+    CancelToken cancelToken = CancelToken();
+    cancelTokenList.add(cancelToken);
+
+    String topicItemListStr = await Http2.postJson(
+        GlobalApi.topicListTopicItemOrderByPraiseDesc
+        , {'topicId': topicId, 'page': page, 'size': size}, cancelToken: cancelToken);
+    Result topicItemListObj = Result.fromJson(
+        jsonDecode(topicItemListStr));
+    if (!Http2.checkCode(topicItemListObj, super.context, scaffoldKey: super.scaffoldKey)) {
+      print('topicItemListObj数据失败');
+      return TopicItemListModel();
+    }
+    TopicItemListModel obj = Convert.convertObj(
+        TopicItemListModel.fromJson, topicItemListObj.data);
+    return obj;
+  }
+
   Future<List<TopicItemModel>> randomTopicItem(int size) async {
     CancelToken cancelToken = CancelToken();
     cancelTokenList.add(cancelToken);
 
     String topicItemStr = await Http2.get(GlobalApi.randomTopicItem
         , {'size': size}, cancelToken: cancelToken);
+    Result topicItemObj = Result.fromJson(
+        jsonDecode(topicItemStr));
+    if (!Http2.checkCode(topicItemObj, super.context, scaffoldKey: super.scaffoldKey)) {
+      print('topicItemObj数据失败');
+      return List<TopicItemModel>();
+    }
+    List<TopicItemModel> list = Convert.convertList(
+        TopicItemModel.fromJson, topicItemObj.data);
+    return list;
+  }
+
+  Future<List<TopicItemModel>> getMyFollowUserTopicItem(int page, int size) async {
+    CancelToken cancelToken = CancelToken();
+    cancelTokenList.add(cancelToken);
+
+    String topicItemStr = await Http2.postJson(GlobalApi.getMyFollowUserTopicItem
+        , {'page': page, 'size': size}, cancelToken: cancelToken);
     Result topicItemObj = Result.fromJson(
         jsonDecode(topicItemStr));
     if (!Http2.checkCode(topicItemObj, super.context, scaffoldKey: super.scaffoldKey)) {
