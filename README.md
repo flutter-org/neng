@@ -4,7 +4,7 @@
 
 ## 效果图
 
-<img src="./public/login_view.png"></img>
+<img src="./public/login_view.png" height="60px"></img>
 <img src="./public/login_view_action.png"></img>
 <img src="./public/home.png"></img>
 <img src="./public/topic_list.png"></img>
