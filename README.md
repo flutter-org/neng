@@ -4,12 +4,21 @@
 
 ## 效果图
 
-<img src="./public/login_view.png" height="60px"></img>
-<img src="./public/login_view_action.png"></img>
-<img src="./public/home.png"></img>
-<img src="./public/topic_list.png"></img>
-<img src="./public/discovery.png"></img>
-<img src="./public/message.png"></img>
-<img src="./public/comment.png"></img>
-<img src="./public/info.png"></img>
-<img src="./public/setting.png"></img>
+<img src="./public/login_view.png" height="800px"></img>
+<img src="./public/login_view_action.png" height="800px"></img>
+<img src="./public/home.png" height="800px"></img>
+<img src="./public/topic_list.png" height="800px"></img>
+<img src="./public/discovery.png" height="800px"></img>
+<img src="./public/message.png" height="800px"></img>
+<img src="./public/comment.png" height="800px"></img>
+<img src="./public/info.png" height="800px"></img>
+<img src="./public/setting.png" height="800px"></img>
+
+## 编译
+
+```
+flutter build ios/apk
+
+```
+
+## 服务端稍后补上
