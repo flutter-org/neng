@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neng/utils/global.dart';
+import 'package:neng/utils/push.dart';
+import 'package:neng/view/add/index.dart';
 import 'package:neng/view/discovery/index.dart';
 import 'package:neng/view/home/index.dart';
 import 'package:neng/view/info/index.dart';
@@ -47,15 +49,51 @@ class _IndexPageState extends State<IndexPage> {
     );
   }
 
+  SlideTransition createTransition(Animation<double> animation, Widget child) {
+    return SlideTransition(
+      position: Tween<Offset>(
+        begin: const Offset(0.0, 1.0),
+        end: const Offset(0.0, 0.0),
+      ).animate(animation),
+      child: child,
+    );
+  }
+
+  void _addView() {
+    Navigator.of(context).push<String>(
+        PageRouteBuilder(
+            pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
+              return AddTopicPage();
+            },
+            transitionsBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child,) {
+              // 添加转场动画
+              return FadeTransition(
+                // 不透明度（`opacity`）属性，控制子组件不透明度的动画。
+                opacity: animation,
+                // 滑动过渡（`SlideTransition`）组件，动画组件相对于其正常位置的位置。
+                // https://docs.flutter.io/flutter/widgets/SlideTransition-class.html
+                child: createTransition(animation, child),
+              );
+            }
+        )
+    ).then((String value) {
+      if ('success' == value) {
+        Push.pushTopReminder(GlobalConfig.mainContext, '操作成功!');
+      }
+    });
+  }
+
   void _tabOnPressed(int index) {
     int pageIndex = index;
-    if (index == 2) {
-      return;
-    }
     if (index > 2) {
       pageIndex = index - 1;
+      _controllerPages.jumpToPage(pageIndex);
+    } else if (index == 2) {
+
+    } else {
+      _controllerPages.jumpToPage(pageIndex);
     }
-    _controllerPages.jumpToPage(pageIndex);
+
     setState(() {
       if (index == 0) {
         _reSetIcon();
@@ -64,7 +102,7 @@ class _IndexPageState extends State<IndexPage> {
         _reSetIcon();
         _discoveryIcon = Image.asset('assets/tab/icon_tab_care_h_22x22.png');
       } else if (index == 2) {
-
+        _addView();
       } else if (index == 3) {
         _reSetIcon();
         _messageIcon = Image.asset('assets/tab/icon_tab_message_h_22x22.png');

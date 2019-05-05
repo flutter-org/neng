@@ -26,6 +26,8 @@ class TopicItemModel {
 
   int countComment;
 
+  bool followUser;
+
   String gmtCreate;
 
   String gmtModified;

@@ -1,16 +1,15 @@
 # neng
 
-A new Flutter application.
+是一个用flutter开发的话题社区app。
 
-## Getting Started
+## 效果图
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+<img src="./public/login_view.png"></img>
+<img src="./public/login_view_action.png"></img>
+<img src="./public/home.png"></img>
+<img src="./public/topic_list.png"></img>
+<img src="./public/discovery.png"></img>
+<img src="./public/message.png"></img>
+<img src="./public/comment.png"></img>
+<img src="./public/info.png"></img>
+<img src="./public/setting.png"></img>

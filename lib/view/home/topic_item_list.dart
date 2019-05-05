@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:neng/components/record_view.dart';
-import 'package:neng/model/topic_item.dart';
-import 'package:neng/model/topic_item_list.dart';
-import 'package:neng/service/topic_service.dart';
 import 'package:neng/utils/global.dart';
 import 'package:neng/utils/push.dart';
-import 'package:neng/view/add/index.dart';
+import 'package:neng/view/home/add_topic_item.dart';
 import 'package:neng/view/home/topic_item_list_tap.dart';
 
 class TopicItemListPage extends StatefulWidget {
@@ -94,7 +90,7 @@ class _TopicItemListPageState extends State<TopicItemListPage> with TickerProvid
     Navigator.of(context).push<String>(
         PageRouteBuilder(
             pageBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
-              return AddPage(widget._topicId);
+              return AddTopicItemPage(widget._topicId);
             },
             transitionsBuilder: (BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation, Widget child,) {
               // 添加转场动画
@@ -151,7 +147,7 @@ class _TopicItemListPageState extends State<TopicItemListPage> with TickerProvid
       floatingActionButton: FloatingActionButton(
         onPressed: _addView,
         highlightElevation: 10.0,
-        backgroundColor: Color(0xFFDCDCDC),
+        backgroundColor: Color(0xFF90D7EC),
         child: Image.asset('assets/icons/pen.png', width: 32.0, height: 32.0),
       ),
     );

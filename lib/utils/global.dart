@@ -14,9 +14,9 @@ class GlobalConfig {
   static String token;
 
   static String imageUrlBase = 'http://nengneng-daily.oss-cn-hangzhou.aliyuncs.com/';
-  static String host = 'http://192.168.31.254:9191';
+//  static String host = 'http://192.168.31.254:9191';
 //  static String host = 'http://192.168.1.105:9191';
-//  static String host = 'http://47.102.101.22:9191';
+  static String host = 'http://47.102.101.22:9191';
   static String projectName = '/neng-app';
   static String baseUrl = host + projectName;
 
